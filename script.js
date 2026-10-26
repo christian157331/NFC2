@@ -7,18 +7,23 @@ const contact = {
     jobTitle: "Computer Engineer"
 };
 
-// Set up the phone, message, and email buttons
+// Use an international phone number format for compatibility
+const phoneInternational = "+639954024903";
+
+// Call button
 document.getElementById("call-link").href =
-    "tel:" + contact.phone;
+    "tel:" + phoneInternational;
 
+// SMS button
 document.getElementById("sms-link").href =
-    "sms:" + contact.phone;
+    "sms:" + phoneInternational;
 
+// Email button
 document.getElementById("email-link").href =
     "mailto:" + contact.email +
     "?subject=" + encodeURIComponent("Hello Christian");
 
-// Download contact information as a VCF file
+// Save Contact button
 document.getElementById("save-contact").addEventListener("click", function () {
     const vCard = [
         "BEGIN:VCARD",
@@ -26,7 +31,7 @@ document.getElementById("save-contact").addEventListener("click", function () {
         "N:Angeles;Christian;;;",
         "FN:Christian Angeles",
         "TITLE:Computer Engineer",
-        "TEL;TYPE=CELL:09954024903",
+        "TEL;TYPE=CELL:+639954024903",
         "EMAIL:jaychristian157@gmail.com",
         "END:VCARD"
     ].join("\r\n");
