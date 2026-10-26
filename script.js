@@ -24,6 +24,7 @@ document.getElementById("email-link").href =
     "?subject=" + encodeURIComponent("Hello Christian");
 
 // Save Contact button
+
 document.getElementById("save-contact").addEventListener("click", function () {
     const vCard = [
         "BEGIN:VCARD",
@@ -33,7 +34,8 @@ document.getElementById("save-contact").addEventListener("click", function () {
         "TITLE:Computer Engineer",
         "TEL;TYPE=CELL:+639954024903",
         "EMAIL:jaychristian157@gmail.com",
-        "END:VCARD"
+        "END:VCARD",
+        ""
     ].join("\r\n");
 
     const blob = new Blob([vCard], {
@@ -45,9 +47,14 @@ document.getElementById("save-contact").addEventListener("click", function () {
 
     link.href = url;
     link.download = "Christian_Angeles.vcf";
+    link.style.display = "none";
+
     document.body.appendChild(link);
     link.click();
     link.remove();
 
-    URL.revokeObjectURL(url);
+    setTimeout(function () {
+        URL.revokeObjectURL(url);
+    }, 60000);
 });
+
