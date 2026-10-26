@@ -33,16 +33,14 @@ document.getElementById("save-contact").addEventListener("click", function () {
         "TITLE:Computer Engineer",
         "TEL;TYPE=CELL:+639954024903",
         "EMAIL:jaychristian157@gmail.com",
-        "END:VCARD",
-        ""
+        "END:VCARD"
     ].join("\r\n");
 
-    const file = new Blob(
-        [vCard],
-        { type: "text/vcard;charset=utf-8" }
-    );
+    const blob = new Blob([vCard], {
+        type: "text/vcard;charset=utf-8"
+    });
 
-    const url = URL.createObjectURL(file);
+    const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
 
     link.href = url;
@@ -51,7 +49,5 @@ document.getElementById("save-contact").addEventListener("click", function () {
     link.click();
     link.remove();
 
-    setTimeout(function () {
-        URL.revokeObjectURL(url);
-    }, 60000);
+    URL.revokeObjectURL(url);
 });
