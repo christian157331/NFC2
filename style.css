@@ -1,0 +1,372 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #f5f3ed;
+    --paper: #fffefa;
+    --sage: #829487;
+    --sage-dark: #53695c;
+    --mint: #e7ede5;
+    --blue: #e7edf0;
+    --beige: #eee5d8;
+    --ink: #303b34;
+    --muted: #858c83;
+    --line: #e6e5dc;
+}
+
+body {
+    min-height: 100vh;
+    padding: 28px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle at 15% 10%, #e3eade 0, transparent 35%),
+        radial-gradient(circle at 90% 85%, #e8e2d7 0, transparent 35%),
+        var(--cream);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Arial, sans-serif;
+}
+
+.card {
+    width: 100%;
+    max-width: 440px;
+    padding: 25px;
+    background: var(--paper);
+    border: 1px solid rgba(130, 148, 135, 0.2);
+    border-radius: 28px;
+    box-shadow: 0 22px 65px rgba(59, 73, 61, 0.12);
+    animation: enter 0.5s ease;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--sage-dark);
+}
+
+.brand-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--mint);
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
+.online {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 7px;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+}
+
+.online i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #90a88f;
+}
+
+.profile {
+    padding: 30px 0 27px;
+    text-align: center;
+}
+
+.photo-frame {
+    position: relative;
+    width: 148px;
+    height: 172px;
+    margin: 0 auto 24px;
+    padding: 6px;
+    border-radius: 75px 75px 28px 28px;
+    background: var(--mint);
+    transform: rotate(-2deg);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: 70px 70px 23px 23px;
+    transform: rotate(2deg);
+}
+
+.photo-badge {
+    position: absolute;
+    right: -12px;
+    bottom: 10px;
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border: 3px solid var(--paper);
+    border-radius: 50%;
+    background: var(--sage);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    transform: rotate(2deg);
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: var(--sage-dark);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 10vw, 49px);
+    font-weight: 500;
+    letter-spacing: -1.8px;
+    line-height: 1.04;
+}
+
+h1 span {
+    color: var(--sage);
+    font-style: italic;
+}
+
+.profession {
+    width: fit-content;
+    margin: 17px auto 0;
+    padding: 9px 15px;
+    border-radius: 20px;
+    background: var(--beige);
+    color: #766a58;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.bio {
+    max-width: 280px;
+    margin: 17px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.location {
+    margin-top: 15px;
+    color: var(--sage-dark);
+    font-size: 10px;
+}
+
+.location span {
+    margin-right: 4px;
+}
+
+.section-label {
+    margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.actions {
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+}
+
+.action {
+    width: 100%;
+    min-height: 65px;
+    margin-top: 10px;
+    padding: 11px 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: white;
+    color: var(--ink);
+    text-align: left;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action:hover,
+.social:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(59, 73, 61, 0.08);
+}
+
+.action.primary {
+    border-color: transparent;
+    background: var(--sage);
+    color: white;
+}
+
+.action-icon {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--mint);
+    color: var(--sage-dark);
+    font-size: 22px;
+}
+
+.primary .action-icon {
+    background: rgba(255, 255, 255, 0.19);
+    color: white;
+}
+
+.action-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.action-text strong,
+.social strong {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.action-text small,
+.social small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.primary .action-text small {
+    color: #edf2ed;
+}
+
+.arrow {
+    color: var(--sage);
+    font-size: 17px;
+}
+
+.primary .arrow {
+    color: white;
+}
+
+.socials {
+    padding-top: 28px;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: var(--ink);
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.instagram {
+    background: #f0eee6;
+}
+
+.facebook {
+    background: var(--blue);
+}
+
+.social-symbol {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--sage-dark);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.social > span:nth-child(2) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+footer {
+    padding-top: 27px;
+    text-align: center;
+}
+
+.footer-line {
+    width: 40px;
+    height: 3px;
+    margin: 0 auto 15px;
+    border-radius: 3px;
+    background: var(--sage);
+}
+
+footer p {
+    color: var(--sage-dark);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+footer span {
+    display: block;
+    margin-top: 9px;
+    color: #a5a79e;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 360px) {
+    .card {
+        padding: 19px;
+        border-radius: 23px;
+    }
+
+    .online {
+        font-size: 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
