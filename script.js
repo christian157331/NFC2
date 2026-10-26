@@ -1,4 +1,4 @@
-
+alert("JavaScript is working!");
 const contact = {
     firstName: "Christian",
     lastName: "Angeles",
