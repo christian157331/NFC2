@@ -2,8 +2,8 @@
 const contact = {
     firstName: "Christian",
     lastName: "Angeles",
-    phone: "+63XXXXXXXXXX",
-    email: "YOUR_EMAIL@example.com",
+    phone: "+09954024903",
+    email: "jaychristian157@gmail.com",
     jobTitle: "Computer Engineer"
 };
 
