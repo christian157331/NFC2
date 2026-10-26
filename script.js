@@ -2,23 +2,23 @@
 const contact = {
     firstName: "Christian",
     lastName: "Angeles",
-    phone: "+09954024903",
+    phone: "09954024903",
     email: "jaychristian157@gmail.com",
     jobTitle: "Computer Engineer"
 };
 
-const phone = contact.phone;
-const email = contact.email;
-
+// Set up the phone, message, and email buttons
 document.getElementById("call-link").href =
-    "tel:" + phone;
+    "tel:" + contact.phone;
 
 document.getElementById("sms-link").href =
-    "sms:" + phone;
+    "sms:" + contact.phone;
 
 document.getElementById("email-link").href =
-    "mailto:" + email;
+    "mailto:" + contact.email +
+    "?subject=" + encodeURIComponent("Hello Christian");
 
+// Download contact information as a VCF file
 document.getElementById("save-contact").addEventListener("click", function () {
     const vCard = [
         "BEGIN:VCARD",
@@ -26,8 +26,8 @@ document.getElementById("save-contact").addEventListener("click", function () {
         "N:Angeles;Christian;;;",
         "FN:Christian Angeles",
         "TITLE:Computer Engineer",
-        `TEL;TYPE=CELL:${phone}`,
-        `EMAIL:${email}`,
+        "TEL;TYPE=CELL:09954024903",
+        "EMAIL:jaychristian157@gmail.com",
         "END:VCARD"
     ].join("\r\n");
 
@@ -41,6 +41,7 @@ document.getElementById("save-contact").addEventListener("click", function () {
 
     link.href = url;
     link.download = "Christian_Angeles.vcf";
+
     document.body.appendChild(link);
     link.click();
     link.remove();
